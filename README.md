@@ -1,4 +1,4 @@
-# Library-Material-Reservation-Application-J2EE
+# Library Material Reservation Application J2EE - (LiMaRA)
 ## Overall Project Summary
 Develop a J2EE web application that provides library material reservations for a city library. The
 application consists of jspx pages, servlets and/or filters, css files, event listeners, java bean
