@@ -1,0 +1,10 @@
+//Jayme Cunha
+package com.jfbc.data;
+
+import ca.senecacollege.prg556.limara.dao.MaterialReservationDAO;
+
+public class MaterialReservationDAOFactory {
+	public static MaterialReservationDAO getMaterialReservationDAO(){
+		return new MaterialReservationData();
+	}
+}

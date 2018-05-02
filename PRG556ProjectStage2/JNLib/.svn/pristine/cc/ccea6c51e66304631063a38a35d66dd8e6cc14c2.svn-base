@@ -1,0 +1,91 @@
+package com.JNLib;
+
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import ca.senecacollege.prg556.limara.bean.Material;
+import ca.senecacollege.prg556.limara.bean.MaterialReservation;
+import ca.senecacollege.prg556.limara.dao.MaterialReservationDAO;
+
+public class MaterialReservationDAOFactory {
+	
+	private class MaterialReservationData implements MaterialReservationDAO {
+
+		public MaterialReservationData() {
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public void cancelMaterialReservation(String materialId) throws SQLException {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void deleteExpiredMaterialReservations() throws SQLException {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public MaterialReservation getMaterialReservation(String materialId)
+				throws SQLException {
+			
+			int accountOwnerId = Integer.parseInt("accountOwnerID");
+			
+			List<MaterialReservation> tempMatRes = getMaterialReservations(accountOwnerId);
+			for(int i=0;i<tempMatRes.size();i++){
+				if(materialId.equals(tempMatRes.get(i).getMaterialId()))
+					return tempMatRes.get(i);
+			}
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@SuppressWarnings("deprecation")
+		@Override
+		public List<MaterialReservation> getMaterialReservations(int accountOwnerId)
+				throws SQLException {
+			
+			Date today = new Date();
+			Timestamp expirationDate = new Timestamp(today.getTime() + 7*24*60*60*1000);
+			
+			MaterialReservation m1 = new MaterialReservation("123456789", "Songs of Innocence","Book",expirationDate);
+			MaterialReservation m2 = new MaterialReservation("987654321", "Songs of Experience","Book",expirationDate);
+
+			List<MaterialReservation> materialsReserved = Arrays.asList(m1,m2);
+			// TODO Auto-generated method stub
+			return 	materialsReserved;
+;
+		}
+
+		@Override
+		public boolean isMaterialAvailable(String materialId) throws SQLException {
+			// TODO Auto-generated method stub
+			return true;
+		}
+
+		@Override
+		public MaterialReservation reserveMaterial(int accountOwnerId, String materialId)
+				throws SQLException {
+			
+			//int accountOwnerId = Integer.parseInt("accountOwnerID");
+			
+			Date today = new Date();
+			Timestamp expirationDate = new Timestamp(today.getTime() + 7*24*60*60*1000);
+			Material tempMat = getMaterial(materialId);
+			// TODO Auto-generated method stub
+			return new MaterialReservation(materialId,tempMat.getTitle(),tempMat.getType(),expirationDate);
+		}
+
+	}
+
+	private static MaterialReservationDAO getMaterialReservationDAO()
+	{
+		return new MaterialReservationData();
+	}
+
+}

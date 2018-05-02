@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Nam Nguyen -->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" 
+   xmlns:c="http://java.sun.com/jsp/jstl/core"
+   xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+   version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html" 
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="limaramenu.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="library.css" />
+<title>Show material reservations</title>
+</head>
+<body>
+<jsp:include page="limaramenu.jspx" />
+<h1>Library Material</h1>
+<p class = "error">You currently don't have any library material reservations</p>
+<div class = "show">
+<form action="cancelreservationconfirmation.jspx" method="post">
+
+<p class = "show">Title:${materialreservations[0].materialTitle}</p>
+<p class = "show">Type:${materialreservations[0].materialType}</p>
+<p class = "show">Reservation expiration date:<fmt:formatDate pattern = "dd-MM-yyyy" value = ${materialreservations[0].expirationDate} /> </p>
+<p><input type="hidden" name="material_id" value = "${materialreservations[0].materialId}" /></p>
+<p><input name="cancelshow" type="submit" value="Cancel Reservation" /></p>
+</form>
+<form action="cancelreservationconfirmation.jspx" method="post">
+
+<p class = "show">Title:${materialreservations[1].materialTitle}</p>
+<p class = "show">Type:${materialreservations[1].materialType}</p>
+<p class = "show">Reservation expiration date:<fmt:formatDate pattern = "dd-MM-yyyy" value = ${materialreservations[1].expirationDate} /></p>
+<p><input type="hidden" name="material_id" value = "${materialreservations[1].materialId}" /></p>
+<p><input name="cancelshow" type="submit" value="Cancel Reservation" /></p>
+</form>
+</div>
+</body>
+</html>
+</jsp:root>

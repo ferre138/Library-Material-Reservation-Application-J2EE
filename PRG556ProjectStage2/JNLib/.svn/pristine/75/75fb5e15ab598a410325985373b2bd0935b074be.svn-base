@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html" 
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="limaramenu.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="library.css" />
+<title>Show material reservations</title>
+</head>
+<body>
+<jsp:directive.include file="limaramenu.jspx" />
+<h1>Library Material</h1>
+<p class = "error">You currently don't have any library material reservations</p>
+<div class = "show">
+<form action="cancelreservationconfirmation.jspx" method="post">
+
+<p class = "show">Title: Harry Potter</p>
+<p class = "show">Type: Book</p>
+<p class = "show">Reservation expiration date: Oct 22, 2015 </p>
+<p><input type="hidden" name="material_id" value = "01233" /></p>
+<p><input name="cancel_reservation" type="submit" value="Cancel Reservation" /></p>
+</form>
+<form action="cancelreservationconfirmation.jspx" method="post">
+
+<p class = "show">Title: V for Vendetta</p>
+<p class = "show">Type: Book</p>
+<p class = "show">Reservation expiration date: Oct 22, 2015 </p>
+<p><input type="hidden" name="material_id" value = "01234" /></p>
+<p><input name="cancel_reservation" type="submit" value="Cancel Reservation" /></p>
+</form>
+</div>
+</body>
+</html>
+</jsp:root>

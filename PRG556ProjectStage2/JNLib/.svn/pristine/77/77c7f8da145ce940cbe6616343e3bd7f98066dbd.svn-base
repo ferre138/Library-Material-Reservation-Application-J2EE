@@ -1,0 +1,62 @@
+package com.jfbc;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.imthebest.BadRequestException;
+import com.imthebest.data.MaterialDAOFactory;
+
+import ca.on.senecac.prg556.common.Control;
+import ca.senecacollege.prg556.limara.bean.Material;
+
+public class CancelReservationConfirmationControl implements Control {
+
+	public CancelReservationConfirmationControl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String doLogic(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String materialID = request.getParameter("materialID");
+		if(materialID == null || materialID.isEmpty())
+		{
+			throw new BadRequestException();
+		}
+		else
+		{
+			Material mat;
+			try {
+				mat = MaterialDAOFactory.getMaterialDAO().getMaterial(materialID);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				throw new ServletException(e);
+			}
+			if(mat == null)
+				throw new BadRequestException();
+			else
+				if ("POST".equals(request.getMethod())){
+					
+				}
+		}
+		return null;
+	}
+
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+
+	}
+
+}

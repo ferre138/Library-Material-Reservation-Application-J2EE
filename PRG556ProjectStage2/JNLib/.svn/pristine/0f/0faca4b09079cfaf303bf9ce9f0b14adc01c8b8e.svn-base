@@ -1,0 +1,79 @@
+package com.JNLib;
+
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import ca.senecacollege.prg556.limara.bean.MaterialReservation;
+import ca.senecacollege.prg556.limara.dao.MaterialReservationDAO;
+
+public class MaterialReservationDAOFactory {
+	
+	private class MaterialReservationData implements MaterialReservationDAO {
+
+		public MaterialReservationData() {
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public void cancelMaterialReservation(String materialId) throws SQLException {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void deleteExpiredMaterialReservations() throws SQLException {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public MaterialReservation getMaterialReservation(String materialId)
+				throws SQLException {
+----------->if(materialId.equals(MaterialReservationData.getMaterialReservations(int accountOwnerId)))
+				return MaterialReservationData.getMaterialReservations();
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@SuppressWarnings("deprecation")
+		@Override
+		public List<MaterialReservation> getMaterialReservations(int accountOwnerId)
+				throws SQLException {
+			
+			Date today = new Date();
+			today.setDate(today.getDate()+7);
+			
+			Date expirationDate = today;
+			
+			MaterialReservation m1 = new MaterialReservation("123456789", "Songs of Innocence","Book",expirationDate);
+			MaterialReservation m2 = new MaterialReservation("987654321", "Songs of Experience","Book",expirationDate);
+
+			List<MaterialReservation> materialsReserved = Arrays.asList(m1,m2);
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public boolean isMaterialAvailable(String arg0) throws SQLException {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public MaterialReservation reserveMaterial(int arg0, String arg1)
+				throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+	}
+
+	private static MaterialReservationDAO getMaterialReservationDAO()
+	{
+		return new MaterialReservationData();
+	}
+
+}

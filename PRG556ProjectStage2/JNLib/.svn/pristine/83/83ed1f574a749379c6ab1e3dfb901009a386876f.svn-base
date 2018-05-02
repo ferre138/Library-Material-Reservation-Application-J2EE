@@ -1,0 +1,40 @@
+div.menu_area {
+        background-color: #EBD6FF;
+        height:100px;
+	}
+div.menu_user {
+        background-color: #FFF1BD;
+		height: 50px;
+		text-align: right;
+		border: 5px solid white;
+	}
+div.menu_area div.menu_logo {
+	float: left;
+	margin-left: 10px;
+	width: 300px;
+	height: 150px;
+	background-image: url('JNLiblogo.jpg');
+	background-repeat: no-repeat; 
+	background-position: center center; 
+	background-position: center center;
+	}
+div.menu_header .title { 
+	font-family: cursive; 
+	font-size: 20pt; 
+	vertical-align: center;
+	text-align: right;
+	color: #993399;
+	}
+span.menu_item { 
+	white-space: nowrap; 
+	}
+span.menu_item a:link, span.menu_item a:visited { 
+	font-family: sans-serif; 
+	font-weight: bold; 
+	}
+p.menu_item {float: right;}
+#user_info { 
+	float: right; 
+	font-size: 12pt;
+	color: #5C0000;
+	}

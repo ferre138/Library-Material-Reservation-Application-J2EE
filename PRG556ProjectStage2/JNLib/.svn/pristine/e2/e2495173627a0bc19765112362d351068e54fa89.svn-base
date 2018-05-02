@@ -1,0 +1,9 @@
+package com.imthebest;
+
+public class BadRequesException {
+
+	public BadRequesException() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

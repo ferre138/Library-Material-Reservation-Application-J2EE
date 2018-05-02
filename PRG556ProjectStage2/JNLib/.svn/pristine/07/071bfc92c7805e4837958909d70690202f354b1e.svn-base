@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html"  
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>New Library Account</title>
+</head>
+<body>
+<h1>Welcome new user!</h1>
+<form method="post" action="newlibraryaccount.jspx">
+<h2>Please enter your information!</h2>
+<p class = "input_information" >First Name: 
+<input type="text" name="first_name" maxlength="50" value = "${fname }"  /><br />
+Last Name: 
+<input type="text" name="last_name" maxlength="50" value = "${lname }" /><br />
+Username: 
+<input type="text" name="user_name" maxlength="15" value = "${username }" /><br />
+Password: 
+<input type="password" name="password" maxlength="15"  /><br />
+Confirm Password: 
+<input type="password" name="confirm_password" maxlength="15" /><br />
+</p>
+<p><input type="submit" name="submit" value="Sign In" /></p>
+<div class = "error">
+<p>First name is not valid</p>
+<p>Last name is not valid</p>
+<p>Username is not valid</p>
+<p>Password is not valid</p>
+<p>The password and the comfirm password do not match</p>
+</div>
+<p><a href=".">Context Root</a></p>
+</form>
+</body>
+</html>
+</jsp:root>

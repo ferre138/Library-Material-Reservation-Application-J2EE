@@ -1,0 +1,40 @@
+<-- Nam Nguyen -->
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html" 
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="limaramenu.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="library.css" />
+<title>Show material reservations</title>
+</head>
+<body>
+<jsp:include page="limaramenu.jspx" />
+<h1>Library Material</h1>
+<p class = "error">You currently don't have any library material reservations</p>
+<div class = "show">
+<form action="cancelreservationconfirmation.jspx" method="post">
+
+<p class = "show">Title:${list[0].title}</p>
+<p class = "show">Type:${list[0].type}</p>
+<p class = "show">Reservation expiration date:${list[0].expirationDate} </p>
+<p><input type="hidden" name="material_id" value = "${list[0].material.ID" /></p>
+<p><input name="cancelshow" type="submit" value="Cancel Reservation" /></p>
+</form>
+<form action="cancelreservationconfirmation.jspx" method="post">
+
+<p class = "show">Title:${list[1].title}</p>
+<p class = "show">Type:${list[1].type}</p>
+<p class = "show">Reservation expiration date: ${list[1].expirationDate} </p>
+<p><input type="hidden" name="material_id" value = "${list[1].material.ID" /></p>
+<p><input name="cancelshow" type="submit" value="Cancel Reservation" /></p>
+</form>
+</div>
+</body>
+</html>
+</jsp:root>

@@ -1,0 +1,37 @@
+package com.imthebest;
+
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import ca.senecacollege.prg556.limara.bean.Material;
+import ca.senecacollege.prg556.limara.bean.MaterialReservation;
+import ca.senecacollege.prg556.limara.dao.MaterialReservationDAO;
+
+public static AccountOwnerDAO getAccountOwnerDAO (){
+	
+	private class AccountOwnerData implements  AccountOwnerDAO {
+
+		
+		
+		public AccountOwner createLibraryAccount(String firstName, String lastName, String username, String password) throws SQLException {
+			// TODO Auto-generated method stub
+
+		}
+
+		
+		public AccountOwner getAccountOwner(int id) throws SQLException (see interface description)
+			// TODO Auto-generated method stub
+
+		}
+	
+	public AccountOwner validateAccountOwner(String username, String password) throws SQLException
+			// TODO Auto-generated method stub
+
+		}
+
+	}	
+
+}

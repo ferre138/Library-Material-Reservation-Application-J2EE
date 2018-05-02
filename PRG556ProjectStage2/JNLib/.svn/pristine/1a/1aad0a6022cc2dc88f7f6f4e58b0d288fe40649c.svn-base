@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd" >
+<properties>
+	<comment>Control Filter Mappings</comment>
+	<entry key="/logout.jspx">com.jfbc.LogoutControl</entry>
+	<entry key="/reservematerials.jspx">com.jfbc.data.ReserveMaterialsControl</entry>
+	<entry key="/cancelreservationconfirmationcontrol.jspx">com.jfbc.data.CancelReservationConfirmationControl</entry>
+	<entry key="/librarylogin.jspx">com.imthebest.LibraryLoginControl</entry>
+	<entry key="/newlibraryaccount.jspx">com.imthebest.NewLibraryAccountControl</entry>
+	<entry key="/showmaterialreservations.jspx">com.imthebest.ShowMaterialReservationsControl</entry>
+	
+</properties>

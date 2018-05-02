@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page language="java" />
+<div class="menu_area">
+<div class="menu_header">
+<div class="menu_logo"><!-- This comment has been inserted to ensure that the XML parser does not convert the open/close div tag into a single close tag --></div>
+<p class="title">Library Material Reservation Application</p>
+</div>
+<p class="menu_item">
+<span class="menu_item"><a class="heading" href="reservematerials.jspx" title="Go to Reserve">Reserve</a>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>
+<span class="menu_item"><a class="heading" href="showmaterialreservations.jspx" title="Go to Reservations">Reservations</a>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>
+<span class="menu_item"><a class="heading" href="lougout.jspx" title="Log out of NJ Library">Log Out</a>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</span>
+</p>
+<div class="menu_user">
+<p id="user_info">Reserved Materials: 0<br />
+JN Library</p>
+</div>
+</div>
+</jsp:root>

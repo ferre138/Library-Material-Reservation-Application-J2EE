@@ -1,0 +1,13 @@
+package com.imthebest;
+
+import javax.servlet.ServletException;
+
+public class BadRequesException extends ServletException{
+
+	
+
+	public BadRequesException() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

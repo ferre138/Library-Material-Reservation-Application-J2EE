@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html"  
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" href="limaramenu.css" type="text/css" />
+<link rel="stylesheet" href="reservematerials.css" type="text/css" />
+
+<title>JN library - Reservation</title>
+</head>
+<body>
+<jsp:directive.include file="limaramenu.jspx" />
+<div class="reservation">
+<form method="post" action="reservematerials.jspx">
+<h1>Material Reservation</h1>
+<h2>Please enter the material title and type</h2>
+<div>
+<label for="title">Title: </label>
+<input id="title "name="title" type="text" />
+<label for="type">&amp;nbsp;&amp;nbsp;Type: </label>
+</div>
+<p>
+<select id="type" name="type">
+	<option value="all">All</option>
+	<option value="book">Book</option>
+	<option value="audio">Audio</option>
+	<option value="video">Video</option>
+	<option value="magazine">Magazine</option>
+	<option value="other">Other...</option>
+</select>
+</p>
+<p><input id="searchButton" type="submit" name="search" value="Search" /></p>
+<p class ="error">*Please provide a title for the material you would like to reserve</p><hr />
+</form>
+<h3>Available materials for</h3>
+<h4>Title: "Songs"</h4> <h4>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;amp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Type: "Book"</h4><br /><br />
+<table id="listingstable">
+<tbody>
+	<tr>
+		<th>ISBN/UPC/ISAN</th>
+		<th>Title</th>
+		<th>Type</th>
+	</tr>
+	<tr>
+		<td>123456789</td>
+		<td>Songs of Innocence</td>
+		<td>Book</td>
+		<td><form method="post" action="reservematerials.jspx">
+			<div>
+			<input id="reserveButton" type="submit" name="act" value="Reserve" />
+			<input type="hidden" name="title" value="Songs" />
+			<input type="hidden" name="type" value="Book" />
+			<input type="hidden" name="material_id" value="123456789" />
+			</div>
+			</form></td>
+	</tr>
+	<tr>
+		<td>987654321</td>
+		<td>Songs of Experience</td>
+		<td>Book</td>
+		<td><form method="post" action="reservematerials.jspx">
+			<div>
+			<input id="reserveButton" type="submit" name="reserve" value="Reserve" />
+			<input type="hidden" name="title" value="Songs" />
+			<input type="hidden" name="type" value="Book" />
+			<input type="hidden" name="material_id" value="987654321" />
+			</div>
+			</form></td>
+	</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
+</jsp:root>

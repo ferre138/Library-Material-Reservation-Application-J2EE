@@ -1,0 +1,90 @@
+package com.imthebest.data;
+
+
+import java.sql.SQLException;
+import ca.senecacollege.prg556.limara.bean.AccountOwner;
+import ca.senecacollege.prg556.limara.dao.AccountOwnerDAO;
+
+class AccountOwnerData implements AccountOwnerDAO {
+
+	@Override
+	public AccountOwner createLibraryAccount(String firstName, String lastName,
+			String username, String password) throws SQLException {
+		
+		int id_1=123;
+		
+		AccountOwner accounts = new AccountOwner (id_1, username, password);
+		
+		return accounts;
+	}
+
+	@Override
+	public AccountOwner getAccountOwner(int id) throws SQLException {
+		
+		int id1 = 123;
+		int id2 = 456;
+		int id3 = 789;
+		String fname1 = "ab";
+		String fname2 = "aba";
+		String fname3 = "abc";
+		String lname1 = "cd";
+		String lname2 = "cdc";
+		String lname3 = "cdd";
+		AccountOwner acc1 = new AccountOwner (id1, fname1, lname1);
+		AccountOwner acc2 = new AccountOwner (id2, fname2, lname2);
+		AccountOwner acc3 = new AccountOwner (id3, fname3, lname2);
+		if (id1 == id)
+			{
+				return acc1;
+			}
+		else if (id2 == id)
+			{
+				return acc2;
+			}
+		else if (id3 == id)
+			{
+				return acc3;
+			}	
+		
+		else
+		return null;
+	}
+
+	@Override
+	public AccountOwner validateAccountOwner(String username, String password)
+			throws SQLException {
+		
+		String uname1 = "aaa";
+		String pass1 = "111";
+		String uname2 = "bbb";
+		String pass2 = "222";
+		String uname3 = "ccc";
+		String pass3 = "333";
+		
+		int id1 = 123;
+		int id2 = 456;
+		int id3 = 789;
+		
+		AccountOwner acc1 = new AccountOwner (id1, uname1, pass1);
+		AccountOwner acc2 = new AccountOwner (id2, uname1, pass1);
+		AccountOwner acc3 = new AccountOwner (id3, uname1, pass1);
+		
+		if (uname1.equals(username) && pass1.equals(password))
+		{
+			return acc1;
+		}
+		else if (uname2.equals(username) && pass2.equals(password))
+		{
+			return acc2;
+		}
+		else if (uname3.equals(username) && pass3.equals(password))
+		{
+			return acc3;
+		}
+		
+	else
+		return null;
+	}
+
+	
+}

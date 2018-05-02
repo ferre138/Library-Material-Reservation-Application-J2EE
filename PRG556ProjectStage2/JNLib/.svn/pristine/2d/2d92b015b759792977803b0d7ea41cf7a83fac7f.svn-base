@@ -1,0 +1,8 @@
+h1 {color: rgb(51,0,0); font-family: italic Arial;}
+h2 {font: bold Arial; color: rgb(51,51,255); }
+p.username_password {font-weight: bold;}
+p.error {font-weight: bold; color: red;}
+p.input_information {font-family: monospace; text-decoration: underline;  color: rgb(0,0,102); }
+div.error{font-weight: bold; color: red;}
+p.root{font-family: cursive; color: blue;}
+p.show {font-family: italic fantasy; color: rgb(32,32,32); }

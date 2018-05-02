@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page language="java"
+        contentType="application/xhtml+xml; charset=UTF-8" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="no" 
+        doctype-root-element="html"  
+        doctype-public="-//W3C//DTD XHTML 1.1//EN" 
+        doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="limaramenu.css" />
+
+<title>Library login page</title>
+</head>
+<body>
+<jsp:directive.include file="limaramenu.jspx" />
+<form method="post" action="librarylogin.jspx">
+<h1>Welcome to our Library!</h1>
+<h2>Please enter your user name and password!</h2>
+<p class = "username_password">Username:<br />
+<input type="text" name="user_name" /><br />
+Password:<br />
+<input type="password" name="password" /><br /></p>
+<p><input type="submit" name="submit" value="Sign In" /></p>
+<a href="newlibraryaccount.jspx">Click here if you are a non library account owner</a>
+<p class ="error">Login attempt has failed</p>
+</form>
+</body>
+</html>
+</jsp:root>

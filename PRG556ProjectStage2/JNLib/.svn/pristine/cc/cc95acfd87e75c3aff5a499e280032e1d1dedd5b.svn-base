@@ -1,0 +1,13 @@
+//Nam Nguyen
+package com.imthebest;
+
+import javax.servlet.ServletException;
+
+public class BadRequestException extends ServletException{
+
+	
+	public BadRequestException() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

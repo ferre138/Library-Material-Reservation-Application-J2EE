@@ -1,0 +1,9 @@
+package com.JNLib;
+
+import ca.senecacollege.prg556.limara.dao.MaterialReservationDAO;
+
+public class MaterialReservationDAOFactory {
+	private static MaterialReservationDAO getMaterialReservationDAO(){
+		return new MaterialReservationData();
+	}
+}

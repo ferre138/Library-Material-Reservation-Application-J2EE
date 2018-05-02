@@ -1,0 +1,28 @@
+package com.imthebest.data;
+
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+
+import ca.senecacollege.prg556.limara.bean.Material;
+import ca.senecacollege.prg556.limara.dao.MaterialDAO;
+
+class MaterialData implements MaterialDAO{
+
+	@Override
+	public List<Material> getAvailableMaterials(String title, String type)
+			throws SQLException {
+		List<Metarial> metarials = new getMetarial();
+		return null;
+	}
+
+	@Override
+	public Material getMaterial(String materialId) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

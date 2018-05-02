@@ -1,0 +1,85 @@
+package com.jfbc.data;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import ca.on.senecac.prg556.common.Control;
+import ca.on.senecac.prg556.common.StringHelper;
+import ca.senecacollege.prg556.limara.bean.Material;
+import ca.senecacollege.prg556.limara.bean.MaterialReservation;
+import ca.senecacollege.prg556.limara.dao.MaterialReservationDAO;
+
+import com.jfbc.data.MaterialReservationDAOFactory;
+import com.jfbc.data.MaterialReservationData;
+
+public class ReserveMaterialsControl implements Control {
+
+	public ReserveMaterialsControl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public String doLogic(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		
+		if ("POST".equals(((HttpServletRequest) request).getMethod())){
+			
+			String type = StringHelper.xmlEscape(request.getParameter("type"));
+			String title = StringHelper.xmlEscape(request.getParameter("type"));
+			if (type != null && !type.isEmpty()){
+				request.setAttribute("matrestype", type);
+				
+				if (title != null && !title.isEmpty())
+					request.setAttribute("matrestitle", title);
+				else
+					request.setAttribute("list", null);
+				
+				if (type == "All"){
+					request.setAttribute("list", null);
+				}
+				else{
+					List<Material> list = MaterialDAOFactory.MaterialData().getAvailableMaterials(title,type);
+					request.setAttribute("list", list);
+					
+					String materialID = StringHelper.xmlEscape(request.getParameter("materialID"));
+					if(materialID != null && !materialID.isEmpty())
+					{
+						throw new BadRequestException();
+					}
+					else
+					{
+						Material mat = MaterialDAOFactory.MaterialData().getMaterial(materialID);
+						if(mat == null)
+							throw new BadRequestException();
+						else{
+							if(MaterialReservationDAOFactory.getMaterialReservationDAO().isMaterialAvailable(mat.getId()))
+								MaterialReservationDAOFactory.getMaterialReservationDAO().reserveMaterial(1,mat.getId());
+						}
+					}
+				}
+			}
+			
+		}
+		// TODO Auto-generated method stub
+ 		return "R:"+ request.getContextPath() + "/"; // Redirect to the context root path.
+
+	}
+
+	@Override
+	public void init() throws ServletException {
+		// TODO Auto-generated method stub
+
+	}
+
+}
